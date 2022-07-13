@@ -1,9 +1,7 @@
 import { User } from "./models/User";
 
-// const user = new User({id:2})
-
-// user.set({name:'joe',age:999})
-// user.save();
-
-const user = new User({id:4,name:'Om',age:27})
+const user = new User({name:'Joey',age:28})
 user.save();
+user.events.on('save',():void=>{
+    console.log(`User ${user.get('name')} saved`)
+})
