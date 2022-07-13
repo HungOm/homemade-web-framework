@@ -1,14 +1,18 @@
 import axios,{AxiosResponse} from 'axios';
 import {Eventing} from './Eventing';
-interface UserProps {
+import {Sync} from './Sync';
+
+export interface UserProps {
     id?: number;
     name?:string;
     age?:number;
         //? makes the property optional
 }
+const rootUrl = 'http://localhost:3000/users';
 
 export class User{
     public events:Eventing = new Eventing();
+    public sync:Sync<UserProps> = new Sync<UserProps>(rootUrl);
     constructor(private data: UserProps){
 
     }
