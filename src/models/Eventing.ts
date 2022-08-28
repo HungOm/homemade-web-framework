@@ -4,7 +4,7 @@ export class Eventing {
     events:{[key:string]:Callback[]} = {}
 
 
-    on(eventName:string,callback:Callback){
+    on = (eventName:string,callback:Callback)=>{
 
         // this.events[eventName] = this.events[eventName] || []
         const handlers = this.events[eventName]||[]
@@ -13,14 +13,12 @@ export class Eventing {
 
     }
 
-    trigger(eventName:string){
+    trigger = (eventName:string)=>{
         const handlers = this.events[eventName]||[]
         if(handlers.length===0||!handlers){
             return;
         }
-        handlers.forEach(handler=>handler())
-
-        
+        handlers.forEach(handler=>handler())  
     } 
 
 }
