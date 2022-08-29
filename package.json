@@ -7,6 +7,8 @@
   },
   "scripts": {
     "start:db": "json-server --watch db.json",
-    "start:parcel": "parcel index.html"
+    "start:parcel": "parcel index.html",
+    "initialize": "npm run start:db && npm run start:parcel"
+    
   }
 }
