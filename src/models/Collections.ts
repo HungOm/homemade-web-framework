@@ -1,5 +1,5 @@
 // import { Model } from "./Model";
-import { Eventing } from "./eventing";
+import { Eventing } from "./Eventing";
 import axios,{AxiosResponse} from "axios";
 
 export class Collection<T,K> {

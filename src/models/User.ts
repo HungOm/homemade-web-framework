@@ -1,6 +1,6 @@
 import { Model } from "./Model";
 import { Attributes } from "./Attributes";
-import { Eventing } from "./eventing";
+import { Eventing } from "./Eventing";
 import { ApiSync } from "./ApiSync";
 import { Collection } from "./Collections";
 export interface UserProps {
@@ -23,6 +23,11 @@ export class User extends Model<UserProps> {
             new Eventing(),
             new ApiSync<UserProps>(rootUrl)
         );
+    }
+
+    setRandomAge():void{
+        const age = Math.round(Math.random()*100)
+        this.set({age})
     }
 
 }
